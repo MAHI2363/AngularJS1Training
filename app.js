@@ -1,9 +1,38 @@
 var myapp = angular.module('myapp',[]);
 myapp.component('myCalculator',{
-    template:'<div>My Custom Calculator</div>',
+    templateUrl:'myCalcualtor.template.html',
     controller:controller1
 });
 myapp.controller('controller1',function($scope){
+    this.isCalculated = false;
+    this.operValue = function(operator){
+        var input1 = parseInt(this.input1);
+        var input2 = parseInt(this.input2);
+        
+        var result;
+ 
+     switch(operator)
+     {
+         case '+':
+           result = input1 + input2;
+           break;
+         case '-':
+           result = input1 - input2;
+           break;
+         case '*':
+           result = input1 * input2;
+           break;
+         case '/':
+           result = input1 / input2;
+           break;
+     }
+     this.result = result;
+     this.isCalculated = true;
+    };
+ 
+    this.onInputChange = function(){
+        this.isCalculated = false;
+   }
 });
 myapp.controller('MyCtrl',function($scope){
     $scope.title = "AngularJS Training";

@@ -1,0 +1,23 @@
+<div ng-controller="MyOperation">
+        Input1<input type="number" ng-model="$ctrl.input1" ng-change="$ctrl.onInputChange()">
+        <br>
+        Input2<input type="number" ng-model="$ctrl.input2" ng-change="$ctrl.onInputChange()"/>
+        <div>
+        <div id="$ctrl.result" ng-class="{'calculation.result':$ctrl.isCalculated}">
+        Result is {{$ctrl.result}}
+        </div>
+        <br> 
+        <button ng-click="$ctrl.operValue('+')">+</button>
+        <button ng-click="$ctrl.operValue('-')">-</button>
+        <button ng-click="$ctrl.operValue('*')">*</button>
+        <button ng-click="$ctrl.operValue('/')">/</button> 
+        </div>
+</div> 
+<div>
+        <h2>Content Area</h2>
+        <my-calculator></my-calculator>
+       </div>
+       <div>
+            <h2>Footer</h2>
+           </div>         
+</div>
