@@ -42,7 +42,21 @@
         <img height="400" width="400" ng-src="{{imgList[index]}}" alt="">
         <button ng-clik="increaseIndex()">></button>
     </div>
-            
+    <div ng-controller="MyOperation">
+            Input1<input type="number" ng-model="input1">
+            <br>
+            Input2<input type="number" ng-model="input2"/>
+            <div>
+            <div id="result">
+            Result is {{result}}
+            </div>
+            <br> 
+            <button ng-click="operValue('+')">+</button>
+            <button ng-click="operValue('-')">-</button>
+            <button ng-click="operValue('*')">*</button>
+            <button ng-click="operValue('/')">/</button> 
+            </div>
+    </div>          
     
     <script src="angular.js"></script>
     <script src="app.js"></script>

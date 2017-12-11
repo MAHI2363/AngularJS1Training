@@ -58,5 +58,31 @@ myapp.controller('MyCtrlImg',function($scope){
         $scope.index =  $scope.index-1;
     }
    };
+});
+
+   myapp.controller('MyOperation',function($scope){
+   $scope.operValue = function(operator){
+       var input1 = parseInt($scope.input1);
+       var input2 = parseInt($scope.input2);
+       
+       var result;
+
+    switch(operator)
+    {
+        case '+':
+          result = input1 + input2;
+          break;
+        case '-':
+          result = input1 - input2;
+          break;
+        case '*':
+          result = input1 * input2;
+          break;
+        case '/':
+          result = input1 / input2;
+          break;
+    }
+    $scope.result = result;
+   };
 
 });
