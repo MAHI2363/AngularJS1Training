@@ -9,7 +9,32 @@
 <body>
     <div ng-controller="MyCtrl">
        {{title}}
+       <input type="text" ng-model="title">
        <button ng-click="sayHi()">Click</button>
+
+       <table>
+         <thead>
+             <tr>
+            <th>Name</th>
+            <th>Department</th>
+            <th>DOB</th>
+             </tr>
+         </thead>       
+         <tbody>
+             <tr ng-repeat="st in students">
+             <td>{{st.name}}</td>
+             <td>{{st.department}}</td>
+             <td>{{st.dob}}</td>
+             <td>
+                <button ng-click="onStundentSelect(st)">View</button> 
+             </td>             
+             </tr>
+           
+         </tbody>
+       </table>
+     <div id="student-details" ng-if="selectedStudent">
+        Selected student is {{selectedStudent.name}}
+     </div>
     </div>
 
     <script src="angular.js"></script>
