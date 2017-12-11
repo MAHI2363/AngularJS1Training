@@ -37,6 +37,13 @@
      </div>
     </div>
 
+    <div ng-controller="MyCtrlImg">
+        <button ng-click="decreaseIndex()"><</button>
+        <img height="400" width="400" ng-src="{{imgList[index]}}" alt="">
+        <button ng-clik="increaseIndex()">></button>
+    </div>
+            
+    
     <script src="angular.js"></script>
     <script src="app.js"></script>
 </body>
