@@ -1,11 +1,10 @@
 var myapp = angular.module('myapp',[]);
 myapp.component('myCalculator',{
     template:'<div>My Custom Calculator</div>',
-    controller:function(){
-
-    }
+    controller:controller1
 });
-
+myapp.controller('controller1',function($scope){
+});
 myapp.controller('MyCtrl',function($scope){
     $scope.title = "AngularJS Training";
 
