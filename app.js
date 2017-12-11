@@ -1,4 +1,10 @@
 var myapp = angular.module('myapp',[]);
+myapp.component('myCalculator',{
+    template:'<div>My Custom Calculator</div>',
+    controller:function(){
+
+    }
+});
 
 myapp.controller('MyCtrl',function($scope){
     $scope.title = "AngularJS Training";
@@ -61,6 +67,8 @@ myapp.controller('MyCtrlImg',function($scope){
 });
 
    myapp.controller('MyOperation',function($scope){
+
+    $scope.isCalculated = false;
    $scope.operValue = function(operator){
        var input1 = parseInt($scope.input1);
        var input2 = parseInt($scope.input2);
@@ -83,6 +91,10 @@ myapp.controller('MyCtrlImg',function($scope){
           break;
     }
     $scope.result = result;
+    $scope.isCalculated = true;
    };
 
+  $scope.onInputChange = function(){
+    $scope.isCalculated = false;
+  }
 });

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
     <title>Angular JS</title>
 </head>
 <body>
@@ -42,12 +43,17 @@
         <img height="400" width="400" ng-src="{{imgList[index]}}" alt="">
         <button ng-clik="increaseIndex()">></button>
     </div>
+    <div>
+        <div>
+         <h2>Header</h2>
+        </div>
+  
     <div ng-controller="MyOperation">
-            Input1<input type="number" ng-model="input1">
+            Input1<input type="number" ng-model="input1" ng-change="onInputChange()">
             <br>
-            Input2<input type="number" ng-model="input2"/>
+            Input2<input type="number" ng-model="input2" ng-change="onInputChange()"/>
             <div>
-            <div id="result">
+            <div id="result" ng-class="{'calculation.result':isCalculated}">
             Result is {{result}}
             </div>
             <br> 
@@ -56,8 +62,15 @@
             <button ng-click="operValue('*')">*</button>
             <button ng-click="operValue('/')">/</button> 
             </div>
-    </div>          
-    
+    </div> 
+    <div>
+            <h2>Content Area</h2>
+            <my-calculator></my-calculator>
+           </div>
+           <div>
+                <h2>Footer</h2>
+               </div>         
+</div>
     <script src="angular.js"></script>
     <script src="app.js"></script>
 </body>
